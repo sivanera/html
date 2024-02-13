@@ -24,5 +24,35 @@ def list_prof(list):
         return render_template('list_prof.html', list='error')
 
 
+@app.route('/answer')
+def answer():
+    user_data = {
+        'title': 'Анкета участника миссии на Марс',
+        'surname': 'Иванов',
+        'name': 'Петр',
+        'education': 'Высшее',
+        'profession': 'Инженер',
+        'sex': 'Мужской',
+        'motivation': 'Познание неизведанных территорий',
+        'ready': 'Да'
+    }
+    return render_template('auto_answer.html', **user_data)
+
+
+@app.route('/auto_answer')
+def auto_answer():
+    user_data = {
+        'title': 'Анкета участника миссии на Марс',
+        'surname': 'Сидоров',
+        'name': 'Анна',
+        'education': 'Среднее специальное',
+        'profession': 'Ученый',
+        'sex': 'Женский',
+        'motivation': 'Исследование новых технологий',
+        'ready': 'Да'
+    }
+    return render_template('auto_answer.html', **user_data)
+
+
 if __name__ == '__main__':
     app.run()
